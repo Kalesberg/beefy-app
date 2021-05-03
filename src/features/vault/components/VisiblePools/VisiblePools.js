@@ -81,6 +81,7 @@ const VisiblePools = ({
               index={index}
               tokens={tokens}
               apy={apys[pool.id] || 0}
+              apyBreakdown={apys[pool.id+'-breakdown']}
               key={pool.id}
               fetchBalancesDone={fetchBalancesDone}
               fetchApysDone={fetchApysDone}

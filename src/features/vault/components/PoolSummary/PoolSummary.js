@@ -23,6 +23,7 @@ const PoolSummary = ({
   balanceSingle,
   sharesBalance,
   apy,
+  apyBreakdown,
   fetchBalancesDone,
   fetchApysDone,
   fetchVaultsDataDone,
@@ -97,16 +98,14 @@ const PoolSummary = ({
                 subvalue={balanceUsd}
                 label={t('Vault-Balance')}
                 isLoading={!fetchBalancesDone}
-                xs={5}
-                md={3}
+                md={2}
               />
               <LabeledStat
                 value={formatDecimals(deposited)}
                 subvalue={depositedUsd}
                 label={t('Vault-Deposited')}
                 isLoading={!fetchBalancesDone}
-                xs={5}
-                md={3}
+                md={1}
                 align="start"
               />
               <LabeledStat
@@ -114,23 +113,28 @@ const PoolSummary = ({
                 label={t('Vault-APY')}
                 boosted={launchpool ? formatApy(launchpool.apy + apy) : ''}
                 isLoading={!fetchApysDone}
-                xs={5}
                 md={2}
                 align="start"
+              />
+              <LabeledStat
+                isApyInfo
+                isSingleAsset={pool.assets.length == 1}
+                apyBreakdown={apyBreakdown}
+                boosted={launchpool ? formatApy(launchpool.apy + apy) : ''}
+                isLoading={!fetchApysDone}
+                md={3}
               />
               <LabeledStat
                 value={calcDaily(apy)}
                 label={t('Vault-APYDaily')}
                 boosted={launchpool ? calcDaily(launchpool.apy + apy) : ''}
                 isLoading={!fetchApysDone}
-                xs={5}
                 md={2}
               />
               <LabeledStat
                 value={formatTvl(pool.tvl, pool.oraclePrice)}
                 label={t('Vault-TVL')}
                 isLoading={!fetchVaultsDataDone}
-                xs={5}
                 md={2}
               />
             </Hidden>

@@ -19,6 +19,7 @@ const Pool = ({
   index,
   tokens,
   apy,
+  apyBreakdown,
   fetchBalancesDone,
   fetchApysDone,
   fetchVaultsDataDone,
@@ -58,6 +59,7 @@ const Pool = ({
           isOpen={isOpen}
           sharesBalance={sharesBalance}
           apy={apy}
+          apyBreakdown={apyBreakdown}
           fetchBalancesDone={fetchBalancesDone}
           fetchApysDone={fetchApysDone}
           fetchVaultsDataDone={fetchVaultsDataDone}
