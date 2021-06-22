@@ -141,9 +141,12 @@ const PoolDetails = ({ vaultId }) => {
           <PoolTitle
             name={pool.name}
             logo={pool.logo}
+            poolId={pool.id}
             description={pool.tokenDescription}
-            url={pool.tokenDescriptionUrl}
-            columns={6}
+            launchpool={launchpool}
+            addLiquidityUrl={pool.addLiquidityUrl}
+            removeLiquidityUrl={pool.removeLiquidityUrl}
+            buyTokenUrl={pool.buyTokenUrl}
           />
           <Grid item md={8} xs={7}>
             <Grid item container justify="space-between">
